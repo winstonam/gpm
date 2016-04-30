@@ -72,7 +72,7 @@ $usuario = $this->session->userdata('usuario');
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?= base_url('administracion/principal') ?>">GPM Sys: App Administraci&oacute;n</a>
+            <a class="navbar-brand" href="<?= base_url('administracion/principal') ?>">GPM Administraci&oacute;n</a>
         </div>
         <!-- /.navbar-header -->
         <ul class="nav navbar-top-links navbar-right">
