@@ -11,7 +11,7 @@
 	<!-- /.row -->
 	<?php 
 		$datos=array_values($this->session->all_userdata());
-		echo '<h3>Bienbenido '.$datos[3].' '.$datos[4].'</h3>'
+		echo '<h3>Bienvenido '.$datos[3].' '.$datos[4].'</h3>'
 	?>
 </div>
 <!-- /#page-wrapper -->
