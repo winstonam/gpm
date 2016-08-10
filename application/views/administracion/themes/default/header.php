@@ -76,36 +76,14 @@ $usuario = $this->session->userdata('usuario');
         </div>
         <!-- /.navbar-header -->
         <ul class="nav navbar-top-links navbar-right">
-            <li class="dropdown">
+<!--             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
-                <ul class="dropdown-menu dropdown-messages">
-
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a class="text-center" href="#">
-                            <strong>Read All Messages</strong>
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-messages -->
-            </li>
+                /.dropdown-messages 
+            </li> -->
             <!-- /.dropdown -->
-            <li class="dropdown">
+<!--             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
@@ -189,10 +167,10 @@ $usuario = $this->session->userdata('usuario');
                         </a>
                     </li>
                 </ul>
-                <!-- /.dropdown-tasks -->
-            </li>
+                /.dropdown-tasks 
+            </li> -->
             <!-- /.dropdown -->
-            <li class="dropdown">
+<!--             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
@@ -249,8 +227,8 @@ $usuario = $this->session->userdata('usuario');
                         </a>
                     </li>
                 </ul>
-                <!-- /.dropdown-alerts -->
-            </li>
+                 /.dropdown-alerts 
+                 </li> -->
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -258,8 +236,6 @@ $usuario = $this->session->userdata('usuario');
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i><?php echo $nombre; ?></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
                     <li><a href="<?= base_url('acceso/cerrar_sesion') ?>"><i class="fa fa-sign-out fa-fw"></i> Cerrar

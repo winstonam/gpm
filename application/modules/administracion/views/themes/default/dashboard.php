@@ -6,6 +6,9 @@
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
-<?php echo print_r($this->session->all_userdata());?>
+<?php 
+$array =array_values($this->session->all_userdata());
+  echo '<h3>Bienvenido '.$array[2].' '.$array[3].'</h3>';
+ ?> 
 </div>
 <!-- /#page-wrapper -->

@@ -76,11 +76,11 @@ $usuario = $this->session->userdata('usuario');
         </div>
         <!-- /.navbar-header -->
         <ul class="nav navbar-top-links navbar-right">
-            <li class="dropdown">
+ <!--            <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-messages">
+                </a> -->
+                <!-- <ul class="dropdown-menu dropdown-messages">
                     <li>
                         <a href="#">
                             <div>
@@ -123,11 +123,11 @@ $usuario = $this->session->userdata('usuario');
                             <i class="fa fa-angle-right"></i>
                         </a>
                     </li>
-                </ul>
+                </ul> -->
                 <!-- /.dropdown-messages -->
-            </li>
+            <!-- </li> -->
             <!-- /.dropdown -->
-            <li class="dropdown">
+            <!-- <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
@@ -211,10 +211,10 @@ $usuario = $this->session->userdata('usuario');
                         </a>
                     </li>
                 </ul>
-                <!-- /.dropdown-tasks -->
-            </li>
+                /.dropdown-tasks 
+            </li> -->
             <!-- /.dropdown -->
-            <li class="dropdown">
+            <!-- <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
@@ -271,8 +271,8 @@ $usuario = $this->session->userdata('usuario');
                         </a>
                     </li>
                 </ul>
-                <!-- /.dropdown-alerts -->
-            </li>
+                 /.dropdown-alerts 
+            </li> -->
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -280,8 +280,6 @@ $usuario = $this->session->userdata('usuario');
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i><?php echo $nombre; ?></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
                     <li><a href="<?= base_url('acceso/cerrar_sesion') ?>"><i class="fa fa-sign-out fa-fw"></i> Cerrar
@@ -298,22 +296,22 @@ $usuario = $this->session->userdata('usuario');
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="<?= base_url('bienvenida/principal') ?>"><i class="fa fa-dashboard fa-fw"></i>P&aacute;gina
+                        <a href="<?= base_url('bienvenida/principal') ?>"><i class="fa fa-home fa-fw"></i>P&aacute;gina
                             Principal</a>
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> M&oacute;dulo Administraci&oacute;n <span
+                        <a href="#"><i class="fa fa-cog fa-fw"></i>  Administraci&oacute;n <span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="<?= base_url('admon_empresa/empresa') ?>"><i class="fa fa-dashboard fa-fw"></i>
+                                <a href="<?= base_url('admon_empresa/empresa') ?>"><i class="fa fa-pencil fa-fw"></i>
                                     Modificar Datos Empresa</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('admon_empresa/cargos') ?>"><i class="fa fa-dashboard fa-fw"></i>
+                                <a href="<?= base_url('admon_empresa/cargos') ?>"><i class="fa fa-list-alt fa-fw"></i>
                                     Cargos</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('admon_empresa/empleados') ?>"><i class="fa fa-dashboard fa-fw"></i>
+                                <a href="<?= base_url('admon_empresa/empleados') ?>"><i class="fa fa-user fa-fw"></i>
                                     Empleados</a>
                             </li>
 
@@ -321,33 +319,45 @@ $usuario = $this->session->userdata('usuario');
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> M&oacute;dulo Ventas <span
+                        <a href="#"><i class="fa fa-list fa-fw"></i> Ventas <span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="<?= base_url('ventas/categoria_productos') ?>"><i class="fa fa-dashboard fa-fw"></i>
-                                  Categorias de productos </a>
-                            </li>
-
-                            <li>
-                                <a href="<?= base_url('ventas/devolucion_causas') ?>"><i class="fa fa-dashboard fa-fw"></i>
+                                <a href="<?= base_url('ventas/devolucion_causas') ?>"><i class="fa fa-list-alt fa-fw"></i>
                                     Causas de devolucion</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('ventas/tipos_pago') ?>"><i class="fa fa-dashboard fa-fw"></i>
+                                <a href="<?= base_url('ventas/tipos_pago') ?>"><i class="fa fa-usd fa-fw"></i>
                                     Tipos de pago</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('ventas/rutas') ?>"><i class="fa fa-dashboard fa-fw"></i>
+                                <a href="<?= base_url('ventas/rutas') ?>"><i class="fa fa-map-marker fa-fw"></i>
                                     Rutas de venta</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('ventas/clientes') ?>"><i class="fa fa-dashboard fa-fw"></i>
+                                <a href="<?= base_url('ventas/clientes') ?>"><i class="fa fa-user fa-fw"></i>
                                     Clientes</a>
                             </li>
-
                         </ul>
                         <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-th-large fa-fw"></i> Productos <span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="<?= base_url('inventario/Proveedores') ?>"><i class="fa fa-list-alt fa-fw"></i>
+                                  Proveedores </a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('ventas/categoria_productos') ?>"><i class="fa fa-list-alt fa-fw"></i>
+                                  Categorias de productos </a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('inventario/productos') ?>"><i class="fa fa-list-alt fa-fw"></i>
+                                  Productos </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>

@@ -25,3 +25,4 @@ class Principal extends Rta91_Controller {
 
 	}
 }
+?>

@@ -11,7 +11,7 @@ class Producto_model extends CI_Model
     public function obtener()
     {
         //$q = $this->db->getwhere('v_clientes');
-        $q = $this->db->get_where('producto', array('id_empresa' => $this->session->userdata('id_empresa')));
+        $q = $this->db->get_where('vw_producto', array('id_empresa' => $this->session->userdata('id_empresa')));
         return $q->result_array();
     }
 
