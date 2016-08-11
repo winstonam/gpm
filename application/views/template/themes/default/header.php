@@ -314,7 +314,10 @@ $usuario = $this->session->userdata('usuario');
                                 <a href="<?= base_url('admon_empresa/empleados') ?>"><i class="fa fa-user fa-fw"></i>
                                     Empleados</a>
                             </li>
-
+                            <li>
+                                <a href="<?= base_url('admon_empresa/RutaEmpleado') ?>"><i class="fa fa-map-marker fa-fw"></i>
+                                    Rutas Empleado</a>
+                            </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
