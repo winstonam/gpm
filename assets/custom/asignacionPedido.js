@@ -2,6 +2,7 @@ var url_nuevo = base_url + 'ventas/asignarPedidos/guardar';
 // var url_editar = base_url + 'inventario/productos/actualizar';
 $(document).ready(function()
 {
+	cargar_empleados();
 	 var tabla_asigPedido=$('#tblAsignPedido').DataTable(
 	 {
 		languague:
@@ -34,36 +35,29 @@ $(document).ready(function()
 	 		$(this).removeClass('selected');
 	 	}else
 	 	{
-	 		tabla_producto.$('tr.selected').removeClass('selected');
+	 		tabla_asigPedido.$('tr.selected').removeClass('selected');
 	 		$(this).addClass('selected');
 	 	}
 	 	if($('#tblAsignPedido tr.selected').length>0)
 	 	{
-	 		$("#btn_editar").removeAttr('disabled');
+	 		$("#btn_nuevo").removeAttr('disabled');
 	 	}else
 	 	{
-	 		$("#btn_editar").attr('disabled','disabled');
+	 		$("#btn_nuevo").attr('disabled','disabled');
 	 	}
 	 });
 	   /*btn nuevo registro*/
 	$("#btn_nuevo").on('click', function (e) {
 	        $('#formulario_pedidoReg')[0].reset();
 	        $("#formulario_pedidoReg").attr('action', url_nuevo);
-	});
-
-	    /*btn editar registro seleccionado*/
-	$("#btn_editar").on('click', function (e) {
-	        $("#formulario_pedidoReg").attr('action', url_editar);
 	        var seleccion = $('#tblAsignPedido tr.selected');
 	        var fila_data = tabla_asigPedido.row(seleccion).data();
-	        $("#id_producto").val(fila_data.id_producto);
-	        $("#id_empresa").val(fila_data.id_empresa);
-	        $("#codigo").val(fila_data.codigo);
-	        $("#nombre_producto").val(fila_data.Nombre_producto);
-	        $("#precio").val(fila_data.precio_sugerido);
-	        $("#existencia").val(fila_data.existencia_Max);
-	        $("#estado").val(fila_data.estado);
+	        $("#id_pedido").val(fila_data.id_pedido);
+	        $("#cliente").val(fila_data.nombres);
+	        $("#fecha").val(fila_data.fecha_pedido);
+	        $("#tipoPago").val(fila_data.descripcion);
 	});
+
 	   /*btn guardar/actualizar registro*/
     $("#btn_guardar").on('click', function () {
         var datos_formulario = $("#formulario_pedidoReg").serialize();
@@ -78,8 +72,8 @@ $(document).ready(function()
                 if (respuesta.estado) {
                     alerta(respuesta.mensaje, 'success');
                     $("#formulario_pedidoReg")[0].reset();
-                    $("#btn_editar").attr('disabled', 'disabled');
-                    tabla_producto.ajax.reload();
+                    $("#btn_nuevo").attr('disabled', 'disabled');
+                    tabla_asigPedido.ajax.reload();
                     $("#mdlAsigPedido").modal('hide');
                 }
                 else
@@ -92,3 +86,12 @@ $(document).ready(function()
         });
     });
 });
+
+function cargar_empleados() {
+    $.getJSON(base_url + "admon_empresa/RutaEmpleado/obtnerEmpleado", function (data) {
+        $.each(data, function (key, val) {
+            var cadena = '<option value="' + val.id_empleado + '">' + val.nombres+' ' +val.primer_apellido+' '+val.segundo_apellido+' '+ ' </option>';
+            $("#id_repartidor").append(cadena);
+        });
+    });
+}

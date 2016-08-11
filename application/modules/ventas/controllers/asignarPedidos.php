@@ -18,9 +18,9 @@ class  asignarPedidos extends  Rta91_Controller
             base_url().'assets/custom/asignacionPedido.js'
         );
         $data['page'] = $this->config->item('gpm_sys_web_template_dir_ventas') . "asignacionPeidoList";
-        // $data['modals'] = array(
-        //     $this->load->view($this->config->item('gpm_sys_web_template_dir_ventas') . "clientes_registrar", '', TRUE),
-        // );
+        $data['modals'] = array(
+            $this->load->view($this->config->item('gpm_sys_web_template_dir_ventas') . "asignacionPedidoRegistar", '', TRUE),
+        );
         $this->load->view($this->_container, $data);
 
     }
@@ -35,6 +35,44 @@ class  asignarPedidos extends  Rta91_Controller
 		}
 	}
 
-	
+	public function guardar()
+	{
+		//Validar archivo
+	        $this->load->library('form_validation');
+	        $this->form_validation->set_rules('id_repartidor', 'Seleccione el Repartidor', 'required');
+
+	        $response['mensaje'] = MSJ_RG_FAIL;
+
+	        if ($this->form_validation->run() == FALSE) {
+	            //Si la validación falla
+	            $response['estado'] = 0;
+	            $response['mensaje'] = validation_errors();
+	        } else {
+	            $data = $this->input->post();
+	            $this->db->trans_start();
+
+	            $pedido['id_repartidor']=$data['id_repartidor'];
+	            $pedido['id_pedido']=$data['id_pedido'];
+
+
+	            $pedido = $this->security->xss_clean($pedido);
+	            $this->asigPedidoModel->guardar($pedido);
+
+	            $this->db->trans_complete();
+	            if ($this->db->trans_status() === FALSE) {
+	                $response['estado'] = 0;
+	                $response['mensaje'] = MSJ_RG_FAIL;
+	            } else {
+	                $response['estado'] = 1;
+	                $response['mensaje'] = MSJ_RG_EXITO;
+	            }
+
+	        }
+	        $this->output
+	            ->set_content_type('application/json')
+	            ->set_output(json_encode($response, JSON_UNESCAPED_SLASHES))
+	            ->_display();
+	        exit;
+	}
 }
 ?>

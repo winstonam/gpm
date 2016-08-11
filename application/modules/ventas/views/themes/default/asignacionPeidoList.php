@@ -30,7 +30,7 @@
 					</div>
 					<br/>
 					<div class="pull-right">
-						<button  id="btn_nuevo" class="btn btn-primary" data-toggle="modal"
+						<button disabled  id="btn_nuevo" class="btn btn-primary" data-toggle="modal"
 						data-target="#mdlAsigPedido">
 							<span class="glyphicon glyphicon-plus"></span> Registrar Producto
 						</button>
