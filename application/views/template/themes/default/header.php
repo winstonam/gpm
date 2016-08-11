@@ -341,6 +341,10 @@ $usuario = $this->session->userdata('usuario');
                                 <a href="<?= base_url('ventas/clientes') ?>"><i class="fa fa-user fa-fw"></i>
                                     Clientes</a>
                             </li>
+                             <li>
+                                <a href="<?= base_url('ventas/asignarPedidos') ?>"><i class="fa fa-user fa-fw"></i>
+                                    Asignarcion Pedido</a>
+                            </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
